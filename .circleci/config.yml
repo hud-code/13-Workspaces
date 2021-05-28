@@ -12,7 +12,7 @@ jobs:
           # Edit below here
         - persist_to_workspace: 
             root: app
-            paths: linux
+            paths: linux/app.linux
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
             path: app/linux/app.linux
 
@@ -28,7 +28,7 @@ jobs:
           # Edit below here
         - persist_to_workspace: 
             root: app
-            paths: windows
+            paths: windows/app.windows
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
             path: app/windows/app.windows
 
@@ -44,7 +44,7 @@ jobs:
           # Edit below here
         - persist_to_workspace: 
             root: app
-            paths: mac
+            paths: mac/app.mac
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
             path: app/mac/app.mac
 
