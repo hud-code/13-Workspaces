@@ -57,8 +57,11 @@ jobs:
         - attach_workspace:
             at: <location>
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app
-            destination: apps
+            path: app/mac/app.mac
+        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
+            path: app/windows/app.windows            
+        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
+            path: app/linux/app.linux
 
 workflows:
   version: 2
