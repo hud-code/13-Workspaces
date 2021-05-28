@@ -11,8 +11,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace: 
-            root: /project/app
-            paths: app/linux
+            root: app
+            paths: linux
 
   build-windows:
     docker:
@@ -25,8 +25,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace: 
-            root: /project/app
-            paths: app/windows
+            root: app
+            paths: windows
 
   build-mac:
       docker:
@@ -39,8 +39,8 @@ jobs:
         - run: cd ~/project/app && pwd && ls
           # Edit below here
         - persist_to_workspace: 
-            root: /project/app
-            paths: app/mac
+            root: app
+            paths: mac
 
   deploy:
       docker:
