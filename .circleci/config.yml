@@ -13,8 +13,8 @@ jobs:
         - persist_to_workspace: 
             root: app
             paths: linux/app.linux
-        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app/linux/app.linux
+#         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
+#             path: app/linux/app.linux
 
   build-windows:
     docker:
@@ -29,8 +29,8 @@ jobs:
         - persist_to_workspace: 
             root: app
             paths: windows/app.windows
-        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app/windows/app.windows
+#         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
+#             path: app/windows/app.windows
 
   build-mac:
       docker:
@@ -45,23 +45,19 @@ jobs:
         - persist_to_workspace: 
             root: app
             paths: mac/app.mac
-        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app/mac/app.mac
+#         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
+#             path: app/mac/app.mac
 
 
   deploy:
       docker:
         - image: node
       steps:
-        - run: mkdir -p apps
         - attach_workspace:
             at: <location>
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app/mac/app.mac
-        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app/windows/app.windows            
-        - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: app/linux/app.linux
+            path: app
+            destination: apps
 
 workflows:
   version: 2
