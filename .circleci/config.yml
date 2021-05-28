@@ -14,7 +14,7 @@ jobs:
             root: app
             paths: linux
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: linux
+            path: linux/app.linux
 
   build-windows:
     docker:
@@ -30,7 +30,7 @@ jobs:
             root: app
             paths: windows
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: windows
+            path: windows/app.windows
 
   build-mac:
       docker:
@@ -46,7 +46,7 @@ jobs:
             root: app
             paths: mac
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: mac
+            path: mac/app.mac
 
 
   deploy:
