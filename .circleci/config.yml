@@ -46,13 +46,11 @@ jobs:
       docker:
         - image: node
       steps:
+        - run: mkdir -p apps
         - attach_workspace:
             at: <location>
         - store_artifacts: # See circleci.com/docs/2.0/artifacts/ for more details.
-            path: 
-              - app/linux
-              - app/windows
-              - app/mac
+            path: app
             destination: apps
 
 workflows:
